@@ -4,7 +4,7 @@ body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 18px;
     background: url('../images/calimg.jpg');
-
+    
 }
 
 .container{
@@ -20,3 +20,11 @@ h1{
    padding:5%;
 
 }
+
+#calcontainer{
+     
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows:repeat(4,80px);
+}
+
