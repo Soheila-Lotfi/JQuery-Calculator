@@ -62,7 +62,11 @@ $("#equal").click(function(){
         $("#secondnumber").text("");
         $("#operator").text("")
         $("#equalsign").text("");
-        $("#result").text("");        
+        $("#result").text(""); 
+        firstNumber="";
+        isOperatorClicked=false;
+        secondNumber="";
+        valCalculator="";       
 
     });
 
