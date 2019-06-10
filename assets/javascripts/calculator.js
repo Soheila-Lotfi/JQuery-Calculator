@@ -6,13 +6,14 @@ var firstNumber="";
 var isOperatorClicked=false;
 var secondNumber="";
 var valCalculator="";
-var isCalculated=false;
+var isCalculated=false;           // we use this varaible to make sure whenever the calculation is done, the  use cant enter new number till he pressed clear button to restart the calculator.
 
 // getting user first number
 
+
 $(".number").click(function(){
           if(isCalculated){
-              return false;
+              return false;                    // the function doesnot run when we use return false 
           }
 
           if( isOperatorClicked){
@@ -20,10 +21,17 @@ $(".number").click(function(){
           }
 
         else {
-            var valNumber=$(this).val();
-            firstNumber+= valNumber;
-            $("#firstnumber").text(firstNumber);
-            console.log(parseInt(firstNumber));
+            var thisVal=$(this).val();
+            var currentVal=$("#firstnumber").text();
+        
+            if (currentVal==="0"){
+                firstNumber=thisVal;
+            }
+            else{
+                firstNumber=currentVal+thisVal;
+            }
+          $("#firstnumber").text(firstNumber);
+       
         }
 
 });
@@ -46,8 +54,14 @@ $(".operator").click(function(){
 
 $(".number").click(function(){
         if (isOperatorClicked==true && !isCalculated){             //isOperatorClicked variable helps to set the html of the firstnumber , operator and secondnumber in order.
-            var valNumber1=$(this).val();
-            secondNumber+= valNumber1;
+            var thisVal=$(this).val();
+            var currentVal=$("#secondnumber").text();
+             if (currentVal === "0"){
+                 secondNumber=thisVal;
+             }
+             else{
+                 secondNumber=currentVal+thisVal;
+             }
             $("#secondnumber").text(secondNumber);
         }
 
@@ -64,7 +78,7 @@ $("#equal").click(function(){
     switch(valCalculator){
 
         case "plus":
-            $("#result").text(parseInt(firstNumber)+parseInt(secondNumber));
+            $("#result").text(parseInt(firstNumber)+parseInt(secondNumber)); //use parseInt to convert string to number
         break;
         case "minus":
             $("#result").text(parseInt(firstNumber)-parseInt(secondNumber));
@@ -78,7 +92,7 @@ $("#equal").click(function(){
 
         case "power":
         $("#result").text(Math.pow(parseInt(firstNumber), parseInt(secondNumber)));
-        console.log(Math.pow(parseInt(firstNumber), parseInt(secondNumber)));
+        console.log(Math.pow(parseInt(firstNumber), parseInt(secondNumber)));   //use Math.pow to do ^
         break;
     }
     }
