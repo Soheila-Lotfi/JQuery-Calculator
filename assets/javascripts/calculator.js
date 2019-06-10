@@ -3,21 +3,28 @@ $(document).ready(function(){
 //creating variables
 
 var firstNumber="";
-var isOperatorClicked=false;
 var secondNumber="";
 var valCalculator="";
 var isCalculated=false;           // we use this varaible to make sure whenever the calculation is done, the  use cant enter new number till he pressed clear button to restart the calculator.
+var isOperatorClicked=false;
 
 // getting user first number
-
 
 $(".number").click(function(){
           if(isCalculated){
               return false;                    // the function doesnot run when we use return false 
           }
 
-          if( isOperatorClicked){
-              return false;
+          if( isOperatorClicked){               //isOperatorClicked variable helps to set the html of the firstnumber , operator and secondnumber in order.
+            var thisVal=$(this).val();
+            var currentVal=$("#secondnumber").text();
+             if (currentVal === "0"){
+                 secondNumber=thisVal;
+             }
+             else{
+                 secondNumber=currentVal+thisVal;
+             }
+            $("#secondnumber").text(secondNumber);
           }
 
         else {
@@ -36,6 +43,7 @@ $(".number").click(function(){
 
 });
 
+
 //Set the HTML of the #operator to the text of what was clicked
 $(".operator").click(function(){
     if(!firstNumber || isCalculated){
@@ -52,20 +60,7 @@ $(".operator").click(function(){
 
 //Set the HTML of the .number to the text of what was clicked
 
-$(".number").click(function(){
-        if (isOperatorClicked==true && !isCalculated){             //isOperatorClicked variable helps to set the html of the firstnumber , operator and secondnumber in order.
-            var thisVal=$(this).val();
-            var currentVal=$("#secondnumber").text();
-             if (currentVal === "0"){
-                 secondNumber=thisVal;
-             }
-             else{
-                 secondNumber=currentVal+thisVal;
-             }
-            $("#secondnumber").text(secondNumber);
-        }
 
-});
 
 $("#equal").click(function(){
 
@@ -97,16 +92,12 @@ $("#equal").click(function(){
     }
     }
 
-    
-
-
 });
 
 $("#clear").click(function(){
 
     initializeCalculator();
          
-
 });
 
 
@@ -119,7 +110,6 @@ function initializeCalculator(){
     valCalculator=""; 
     $("#firstnumber, #secondnumber, #operator, #equalsign,#result").empty();  //use empty method to emty the elements
 };
-
 
 
 });
