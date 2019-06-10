@@ -5,7 +5,7 @@ $(document).ready(function(){
 var firstNumber="";
 
 
-// getting user input
+// getting user first number
 
 $(".number").click(function(){
 
@@ -14,8 +14,17 @@ $(".number").click(function(){
     $("#firstnumber").text(firstNumber);
 
 
-})
+});
 
+$(".operator").click(function(){
+
+var valCalculator=$(this).text();    // dont forget to put parenthesis infront of text-text()
+$("#operator").text(valCalculator);
+
+
+
+
+})
 
 
 });
