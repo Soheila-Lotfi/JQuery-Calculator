@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Calculator</title>
+
+  <!-- Added link to the jQuery Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Added a link to Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+  <!-- Added a link to our external stylesheet-->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1> Online Calculator</h1> 
+        </div>
+
+    </header>
+
+    <div class="container">
+        <div id="main-section">
+            <div id="calcontainer">
+               <button type="button" value="1">1</button>
+               <button type="button" value="2">2</button>
+               <button type="button" value="3">3</button>
+               <button type="button" value="times">&times;</button>
+               <button type="button" value="4">4</button>
+               <button type="button" value="5">5</button>
+               <button type="button" value="6">6</button>
+               <button type="button" value="plus">+</button>
+               <button type="button" value="7">7</button>
+               <button type="button" value="8">8</button>
+               <button type="button" value="9">9</button>
+               <button type="button" value="minus">&minus;</button>
+               <button type="button" value="0">0</button>
+               <button type="button" value="divide">&divide;</button>
+               <button type="button" value="power">^</button>
+               <button type="button" value="equal">=</button>
+            </div>
+            <div id="calresult">
+                <h1 id="firstnumber"></h1>
+                <h1 id="operator"></h1>
+                <h1 id="secondnumber"></h1>
+                <h1 id="calresult"></h1>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
