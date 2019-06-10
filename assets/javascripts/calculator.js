@@ -5,6 +5,7 @@ $(document).ready(function(){
 var firstNumber="";
 var isOperatorClicked=false;
 var secondNumber="";
+var valCalculator="";
 
 // getting user first number
 
@@ -20,8 +21,8 @@ $(".number").click(function(){
 //Set the HTML of the #operator to the text of what was clicked
 $(".operator").click(function(){
 
-var valCalculator=$(this).text();    // dont forget to put parenthesis infront of text-text()
-$("#operator").text(valCalculator);
+valCalculator=$(this).val();    
+$("#operator").text($(this).text());   // dont forget to put parenthesis infront of text-text()
 isOperatorClicked=true;
 });
 
@@ -37,6 +38,27 @@ $(".number").click(function(){
 
 });
 
+$("#equal").click(function(){
+    $("#equalsign").text($(this).text());
+    switch(valCalculator){
+
+        case "plus":
+            $("#result").text(parseInt(firstNumber)+parseInt(secondNumber));
+        break;
+        case "minus":
+            $("#result").text(parseInt(firstNumber)-parseInt(secondNumber));
+        break;
+        case "times":
+            $("#result").text(parseInt(firstNumber)*parseInt(secondNumber));
+        break;
+        case "divide":
+            $("#result").text(parseInt(firstNumber)/parseInt(secondNumber));
+        break;
+    
+    }
+
+
+});
 
 
 
