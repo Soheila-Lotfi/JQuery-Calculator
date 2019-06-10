@@ -97,24 +97,28 @@ $("#equal").click(function(){
     }
     }
 
-    $("#clear").click(function(){
-        // $("#firstnumber").text("");
-        // $("#secondnumber").text("");
-        // $("#operator").text("")
-        // $("#equalsign").text("");
-        // $("#result").text(""); 
-
-        $("#firstnumber, #secondnumber, #operator, #equalsign,#result").empty();  //use empty method to emty the elements
-        firstNumber="";
-        isOperatorClicked=false;
-        isCalculated=false;
-        secondNumber="";
-        valCalculator="";       
-
-    });
+    
 
 
 });
+
+$("#clear").click(function(){
+
+    initializeCalculator();
+         
+
+});
+
+
+function initializeCalculator(){
+   
+    firstNumber="";
+    isOperatorClicked=false;
+    isCalculated=false;
+    secondNumber="";
+    valCalculator=""; 
+    $("#firstnumber, #secondnumber, #operator, #equalsign,#result").empty();  //use empty method to emty the elements
+};
 
 
 
