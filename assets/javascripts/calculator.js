@@ -39,6 +39,7 @@ $(".number").click(function(){
 });
 
 $("#equal").click(function(){
+
     $("#equalsign").text($(this).text());
     switch(valCalculator){
 
@@ -56,6 +57,14 @@ $("#equal").click(function(){
         break;
     
     }
+    $("#clear").click(function(){
+        $("#firstnumber").text("");
+        $("#secondnumber").text("");
+        $("#operator").text("")
+        $("#equalsign").text("");
+        $("#result").text("");        
+
+    });
 
 
 });
